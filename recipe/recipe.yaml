@@ -41,7 +41,7 @@ requirements:
   host:
     - openssl
   run_exports:
-    - "{{ pin_subpackage(context.name, max_pin='x.x') }}"
+    - "${{ pin_subpackage('cyclonedds', upper_bound='x.x') }}"
 
 
 tests:
