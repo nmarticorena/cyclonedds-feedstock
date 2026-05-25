@@ -1,5 +1,5 @@
 {% set name = "cyclonedds" %}
-{% set version = "0.6.0" %}
+{% set version = "11.0.1" %}
 
 package:
   name: {{ name }}
@@ -7,10 +7,10 @@ package:
 
 source:
   - url: https://github.com/eclipse-cyclonedds/cyclonedds/archive/{{ version }}.tar.gz
-    sha256: 75e8c54a084e80a59d153087041680985dbb035e281744f2b69330bc0de7ce13
+    sha256: c25d46075ad6b5cee564bda9e5f49509e9a6dbb1a8b858e708eb360d335cf973
 
 build:
-  number: 1
+  number: 0
   skip: true  # [unix]
   run_exports:
     - {{ pin_subpackage(name, max_pin='x.x') }}
@@ -19,6 +19,7 @@ requirements:
   build:
     - {{ compiler('cxx') }}
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - cmake
     - maven
     - openjdk
