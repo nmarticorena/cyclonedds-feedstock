@@ -28,8 +28,6 @@ build:
             -DCMAKE_INSTALL_PREFIX=$PREFIX \
             $SRC_DIR
         cmake --build . --config Release --target install
-  # run_exports:
-  #   - "{{ pin_subpackage(context.name, max_pin='x.x') }}"
 
 requirements:
   build:
@@ -42,6 +40,9 @@ requirements:
     - ninja
   host:
     - openssl
+  run_exports:
+    - "{{ pin_subpackage(context.name, max_pin='x.x') }}"
+
 
 tests:
   - package_contents:
