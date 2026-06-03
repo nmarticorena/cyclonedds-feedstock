@@ -1,17 +1,16 @@
 context:
-  name: cyclonedds
-  version: 0.10.5
+  version: 11.0.1
 
 package:
-  name: "${{ name }}"
+  name: cyclonedds
   version: "${{ version }}"
 
 source:
   url: "https://github.com/eclipse-cyclonedds/cyclonedds/archive/${{ version }}.tar.gz"
-  sha256: ec3ec898c52b02f939a969cd1a276e219420e5e8419b21cea276db35b4821848
+  sha256: c25d46075ad6b5cee564bda9e5f49509e9a6dbb1a8b858e708eb360d335cf973
 
 build:
-  number: 0
+  number: 1
   script:
     - if: win
       then: |
@@ -69,3 +68,4 @@ extra:
     - seanyen
     - phreed
     - Tobias-Fischer
+    - nmarticorena

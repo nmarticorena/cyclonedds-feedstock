@@ -193,6 +193,7 @@ Feedstock Maintainers
 =====================
 
 * [@Tobias-Fischer](https://github.com/Tobias-Fischer/)
+* [@nmarticorena](https://github.com/nmarticorena/)
 * [@phreed](https://github.com/phreed/)
 * [@seanyen](https://github.com/seanyen/)
 
