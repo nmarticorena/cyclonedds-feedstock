@@ -10,7 +10,7 @@ source:
   sha256: c25d46075ad6b5cee564bda9e5f49509e9a6dbb1a8b858e708eb360d335cf973
 
 build:
-  number: 1
+  number: 2
   script:
     - if: win
       then: |
@@ -18,6 +18,7 @@ build:
             -DCMAKE_BUILD_TYPE=Release ^
             -DCMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP=True ^
             -DCMAKE_INSTALL_PREFIX=%LIBRARY_PREFIX% ^
+            -DENABLE_ICEORYX=ON ^
             %SRC_DIR%
         cmake --build . --config Release --target install
       else: |
@@ -25,6 +26,7 @@ build:
             -DCMAKE_BUILD_TYPE=Release \
             -DCMAKE_INSTALL_SYSTEM_RUNTIME_LIBS_SKIP=True \
             -DCMAKE_INSTALL_PREFIX=$PREFIX \
+            -DENABLE_ICEORYX=ON \
             $SRC_DIR
         cmake --build . --config Release --target install
 
@@ -39,6 +41,10 @@ requirements:
     - ninja
   host:
     - openssl
+    - iceoryx
+
+  run:
+    - iceoryx
   run_exports:
     - "${{ pin_subpackage('cyclonedds', upper_bound='x.x') }}"
 
